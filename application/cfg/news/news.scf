@@ -1,0 +1,21 @@
+/**
+ * lasjd ghaksldjgasljdg asd
+ **/
+  /* asds adas dasdasd */
+
+#comentario
+// asdk asjdkasjd asd 
+  // asdmasd masg dasd
+@processor[encoding:UTF-8|createIfExists:false|test:true];
+Table("tbl_news")[ // comentario
+	"id_news" => type:int|length:40|not_null|primary_key|autoincrement|unsigned|visible:false|label:Id Noticia,
+	//"titulo" => tbl_textos.titulo@id_news_rel,
+	"id_noticia_rel" => type:int|length:100|foreign:tbl_categorias.id_categoria(label){delete restrict&update cascade}
+	"titulo" => type:varchar|length:200|not_null|fulltext,
+	"activo" => type:tinyint|length:1|default:0 
+];
+
+Table("tbl_categorias")[
+   "id_categoria"=>type:int|length:40|not_null|primary_key,
+   "label"=>type:varchar|length:120|not_null|default:no name
+];
